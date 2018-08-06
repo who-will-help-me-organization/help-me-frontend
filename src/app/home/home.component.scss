@@ -1,0 +1,14 @@
+@import './../shared/util.scss';
+
+.container {
+    @include apply-fixed-container();
+    background: #FEFEFE;
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        background-color: #999999
+    }
+}
