@@ -1,3 +1,54 @@
-<p>
-  signup works!
-</p>
+
+<div class="container">
+    <div class="signup-card">
+      <h1>Create an Account</h1>
+  
+      <form class="app-form-type1" [formGroup]="signUpForm" (ngSubmit)="submitForm(signUpForm.value)">
+  
+        <input [ngClass]="{'has-error': !signUpForm.controls['code'].valid && signUpForm.controls['code'].touched,
+                          'touched': signUpForm.controls['code'].touched }" class="app-form-control" type="text" placeholder="Code (9 numbers)"
+                          [formControl]="signUpForm.controls['code']">
+        
+        <input [ngClass]="{'has-error': !signUpForm.controls['courseCode'].valid && signUpForm.controls['courseCode'].touched,
+                          'touched': signUpForm.controls['courseCode'].touched }"
+                          class="app-form-control"
+                          type="text" placeholder="Course Code (4 numbers)"
+                          [formControl]="signUpForm.controls['courseCode']">
+  
+        <input [ngClass]="{'has-error':!signUpForm.controls['email'].valid && signUpForm.controls['email'].touched,
+                          'touched': signUpForm.controls['email'].touched }"
+                          class="app-form-control"
+                          type="email" placeholder="Email"
+                          [formControl]="signUpForm.controls['email']">
+  
+  
+        <input [ngClass]="{'has-error': !signUpForm.controls['name'].valid && signUpForm.controls['name'].touched,
+                          'touched': signUpForm.controls['name'].touched }"
+                          class="app-form-control"
+                          type="text" placeholder="Name"
+                          [formControl]="signUpForm.controls['name']">
+  
+        <input [ngClass]="{'has-error':!signUpForm.controls['password'].valid && signUpForm.controls['password'].touched,
+                          'touched': signUpForm.controls['password'].touched }"
+                          class="app-form-control"
+                          type="password" placeholder="Password (6 characters, a letter and a number)"
+                          [formControl]="signUpForm.controls['password']">
+  
+        <input [ngClass]="{'has-error':!signUpForm.controls['confirmPassword'].valid && signUpForm.controls['confirmPassword'].touched,
+                          'touched': signUpForm.controls['confirmPassword'].touched }"
+                          class="app-form-control"
+                          type="password" placeholder="Confirm password"
+                          [formControl]="signUpForm.controls['confirmPassword']">
+  
+        <button class="btn btn-block app-btn-type1"
+                type="submit"
+                [ngClass]="{'disabled': !signUpForm.valid}"
+                [disabled]='!signUpForm.valid'>Sign Up</button>
+  
+        <p>Already have an account?</p>
+  
+        <button class="btn btn-block app-btn-type3" (click)=goBack()>Sign In</button>
+  
+      </form>
+    </div>
+  </div>

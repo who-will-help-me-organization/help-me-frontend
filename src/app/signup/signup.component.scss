@@ -1,0 +1,43 @@
+@import './../shared/util.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+.container {
+  @include apply-fixed-container();
+  @include apply-flexlayout(row, nowrap, center, center);
+
+  background: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.54)), url("../../assets/background.jpeg") no-repeat;
+  background-size: 100%;
+
+  .signup-card {
+    @include apply-flexlayout(column, nowrap, center, center);
+    background-color: rgba(127, 135, 152, 0.59);
+    padding: 40px 50px 40px 50px;
+    max-width: 540px;
+    border-radius: 1px;
+    h1 {
+      font-family: 'Montserrat';
+      font-size: 3rem;
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      padding: 0px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      &:hover {
+        color: white;
+      }
+    }
+
+    h2 {
+      margin-top: 10%;
+      margin-bottom: 30px;
+      font-weight: bold;
+      text-align: center;
+      color: silver;
+    }
+  }
+}
